@@ -11,16 +11,8 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
-    // 'container' => [
-    //     'definitions' => [
-    //         'yii\data\Pagination' => [
-    //             'pageSize' => 2
-    //         ],
-    //     ],
-    // ],
     'components' => [
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Cv0Wk5wqHnWBecOYhrH6D41J754HZcvg',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
@@ -35,6 +27,7 @@ $config = [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => [
                         'v1/client',
+                        'v1/application',
                     ],
                     'pluralize'=>false,
                 ],
@@ -63,6 +56,13 @@ $config = [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
+                    'maskVars' => [
+                        '_SERVER.HTTP_X_PASSWORD',
+                        '_SERVER.DB_DSN',
+                        '_SERVER.DB_USERNAME',
+                        '_SERVER.DB_PASSWORD',
+                        '_SERVER.DB_CHARSET',
+                    ],
                 ],
             ],
         ],

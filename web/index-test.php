@@ -1,4 +1,8 @@
 <?php
+define('DOTENV_PATH', dirname(__FILE__) . '/..');
+define('DOTENV_FILE', '.env');
+
+require __DIR__ . '/../vendor/autoload.php';
 
 // NOTE: Make sure this file is not accessible when deployed to production
 if (!in_array(@$_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'])) {
@@ -8,7 +12,6 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'])) {
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'test');
 
-require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/../config/test.php';

@@ -1,10 +1,13 @@
 <?php
-
-// comment out the following two lines when deployed to production
-defined('YII_DEBUG') or define('YII_DEBUG', true);
-defined('YII_ENV') or define('YII_ENV', 'dev');
+define('DOTENV_PATH', dirname(__FILE__) . '/..');
+define('DOTENV_FILE', '.env');
 
 require __DIR__ . '/../vendor/autoload.php';
+
+// comment out the following two lines when deployed to production
+defined('YII_DEBUG') or define('YII_DEBUG', (bool) env('YII_DEBUG'));
+defined('YII_ENV') or define('YII_ENV', env('YII_ENV', 'prod'));
+
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/../config/api.php';
