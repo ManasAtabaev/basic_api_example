@@ -46,9 +46,12 @@
         ],
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
-            "yii\\composer\\Installer::postInstall"
+            "yii\\composer\\Installer::postInstall",
+            "@php -r \"file_exists('.env') || copy('.env.dist', '.env');\""
         ],
-        "test-api": "php vendor/bin/codecept run api"
+        "test-api": [
+            "php vendor/bin/codecept run api"
+        ]
     },
     "extra": {
         "yii\\composer\\Installer::postCreateProject": {
