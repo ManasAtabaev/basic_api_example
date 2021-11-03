@@ -95,9 +95,15 @@ class Application extends \app\db\ActiveRecord
     {
         return [
             'id',
-            'clientId',
-            'term',
-            'amount',
+            'clientId' => function() {
+                return (int) $this->clientId;
+            },
+            'term' => function() {
+                return (int) $this->term;
+            },
+            'amount' => function() {
+                return $this->amount + 0;
+            },
             'currency',
         ];
     }

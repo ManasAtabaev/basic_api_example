@@ -434,7 +434,7 @@
                 },
                 "phoneNumber": {
                     "type": "string",
-                    "example": "+996 700 123 456"
+                    "example": "+996 700 123 321"
                 },
             },
             "xml": {
