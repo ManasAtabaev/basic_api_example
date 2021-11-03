@@ -5,7 +5,7 @@
 - Change application settings in your `.env` file
 - Run `./yii migrate` (migrations)
 - Optional:
-  - Run `./bin/yii serve` to serve application using PHP built-in web server
+  - Run `./yii serve` to serve application using PHP built-in web server
   - Open `http://localhost:8080/doc` for documentation
 
   ## Testing
